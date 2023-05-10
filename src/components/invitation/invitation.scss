@@ -1,0 +1,253 @@
+.invitation-container {
+  padding: 60px 11.75%;
+
+  .invitation {
+    font-family: 'Prata', serif;
+    border: 1px solid #db9f05;
+    border-top: none;
+    padding: 60px 0 0;
+
+    &-title {
+      font-size: 48px;
+      overflow-wrap: anywhere;
+      text-align: center;
+      white-space: pre-wrap;
+      background-position: left bottom, right bottom;
+      position: relative;
+      z-index: 1;
+      background-image: linear-gradient(#db9f05, #db9f05),
+        linear-gradient(#db9f05, #db9f05);
+      background-repeat: no-repeat;
+      background-size: 1px 50%, 1px 50%;
+      width: 100%;
+
+      &::before {
+        position: absolute;
+        background-color: #db9f05;
+        height: 1px;
+        content: '';
+        top: 60%;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      span {
+        padding: 0 15px;
+        background-color: #fffdf8;
+        display: inline-block;
+        margin: auto;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-text {
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+      }
+
+      &-datetime {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &-time {
+        div {
+          font-size: 48px;
+          border-top: 1px solid #db9f05;
+          border-bottom: 1px solid #db9f05;
+          padding-top: 8px;
+        }
+      }
+
+      &-date {
+        div {
+          padding: 24px 0;
+          font-size: 96px;
+        }
+      }
+
+      &-address {
+        font-size: 24px;
+        padding-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        column-gap: 16px;
+
+        &__underline {
+          grid-column: span 8 / span 8;
+          grid-column-start: 2;
+          overflow-wrap: anywhere;
+          white-space: pre-wrap;
+          margin: 1.5rem 0;
+          text-decoration: underline;
+          text-align: center;
+        }
+
+        &__text {
+          grid-column: span 8 / span 8;
+          grid-column-start: 2;
+          max-width: 80%;
+          margin: 2rem auto;
+          p {
+            margin-top: 24px;
+            margin-bottom: 90px;
+            width: inherit;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  .invitation-container {
+    padding: 40px calc(100% / 12 + 16px);
+
+    .invitation {
+      border: none;
+      padding: 48px 0 0 0;
+      border: 1px solid #db9f05;
+      border-top: none;
+      &-title {
+        font-size: 36px;
+        overflow-wrap: anywhere;
+        text-align: center;
+        position: relative;
+        width: 100%;
+      }
+
+      &-content {
+        &-text {
+          max-width: 60%;
+          font-size: 20px;
+          margin: 2rem auto;
+          text-align: center;
+        }
+
+        &-datetime {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        &-time {
+          div {
+            font-size: 36px;
+            padding-top: 8px;
+          }
+        }
+
+        &-date {
+          div {
+            padding: 32px 0;
+            font-size: 68px;
+          }
+        }
+
+        &-address {
+          font-size: 20px;
+          padding-top: 32px;
+          width: 100%;
+          display: block;
+
+          &__underline {
+            margin: 24px 0;
+            padding: 0 calc(10% + 16px);
+          }
+
+          &__text {
+            margin: 2rem auto;
+            max-width: 60%;
+            p {
+              width: 100%;
+              margin: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 672px) {
+  .invitation-container {
+    padding: 24px 0;
+
+    .invitation {
+      border: none;
+      padding: 48px 0 0 0;
+
+      &-title {
+        font-size: 24px;
+        overflow-wrap: anywhere;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        background: none;
+
+        &::before {
+          top: 150%;
+          width: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute;
+          background-color: #db9f05;
+          height: 1px;
+          content: '';
+        }
+      }
+
+      &-content {
+        border-bottom: 1px solid #db9f05;
+        &-text {
+          max-width: 100%;
+          font-size: 18px;
+        }
+
+        &-datetime {
+          display: flex;
+          align-items: center;
+          flex-direction: column-reverse;
+        }
+
+        &-time {
+          div {
+            font-size: 24px;
+            padding-top: 8px;
+            border: none;
+          }
+        }
+
+        &-date {
+          div {
+            padding: 36px 0;
+            font-size: 48px;
+          }
+        }
+
+        &-address {
+          font-size: 18px;
+          padding-top: 44px;
+          display: block;
+
+          &__text {
+            margin: 48px 0;
+            max-width: unset;
+            p {
+              width: 100%;
+              margin: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
